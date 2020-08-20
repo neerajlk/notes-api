@@ -1,9 +1,14 @@
 const express = require('express');
+var cors = require('cors')
 const bodyParser = require('body-parser');
-const gaurd = require('./app/middlewares/route-gaurd')
 
 // create express app
 const app = express();
+
+app.use(cors({origin: 'http://localhost:4200'}));
+
+const gaurd = require('./app/middlewares/route-gaurd')
+
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
