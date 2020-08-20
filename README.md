@@ -8,13 +8,13 @@ start the server with command `npm start` from root project directory.
 
 # Login and Register
  Register - POST : `/user` , payload : { "name" : 'your-name' "email" :'your-email' , "password": 'your-password'}
- 
+
  Login - POST : `/login` , payload : { "email" :'your-email' , "password": 'your-password'}
 
 # To-Do-Notes
- Create Note - POST : `/note` ,  Headers : {Authorization : 'Token-generated-from-login'}
+ Create Note - POST : `/note` , payload : { "title" :'your-title' , "description": 'your-description'} ,  Headers : {Authorization : 'Token-generated-from-login'}
 
- Edit Note - PUT : `/note/:id` , (`:id`- Note ID), Headers : {Authorization : 'Token-generated-from-login'}
+ Edit Note - PUT : `/note/:id` , payload : { "title" :'your-title' , "description": 'your-description'} , (`:id`- Note ID), Headers : {Authorization : 'Token-generated-from-login'}
 
  Delete Note - DELETE : `/note/:id` , (`:id`- Note ID) , Headers : {Authorization : 'Token-generated-from-login'}
  
