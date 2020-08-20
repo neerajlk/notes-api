@@ -8,6 +8,7 @@ start the server with command `npm start` from root project directory.
 
 # Login and Register
  Register - POST : `/user` , payload : { "name" : 'your-name' "email" :'your-email' , "password": 'your-password'}
+ 
  Login - POST : `/login` , payload : { "email" :'your-email' , "password": 'your-password'}
 
 # To-Do-Notes
