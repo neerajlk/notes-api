@@ -33,17 +33,22 @@ exports.create = (req, res) => {
 
 // Retrieve and return all notes from the database.
 exports.findAll = (req, res) => {
-    Note.find()
-    .skip(((req.query.page || 2) - 1) * (req.query.limit || 5))
-    .limit((req.query.limit || 10) / 1)
-        .then(notes => {
-            res.send(notes);
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving notes."
+    Note.count({},function(err,count){
+        Note.find()
+        .skip(((req.query.page || 2) - 1) * (req.query.limit || 5))
+        .limit((req.query.limit || 10) / 1).exec(function(err, notes) {
+          if (err)
+            res.json(err);
+          else
+            res.json({
+              "TotalCount": count,
+              "notes": notes
             });
         });
+       });
 };
+
+
 
 // Find a single note with a noteId
 exports.findOne = (req, res) => {

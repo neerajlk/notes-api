@@ -35,7 +35,9 @@ exports.create = (req, res) => {
     // Save user in the database
     user.save()
         .then(data => {
-            res.status(200).send("User Created");
+            res.status(200).send({
+                message: "User Registered Successfully"
+            });
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while creating the User."
