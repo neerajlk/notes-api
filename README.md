@@ -20,4 +20,4 @@ start the server with command `npm start` from root project directory.
  
  Get Note - GET : `/note/:id` , (`:id`- Note ID) , Headers : {Authorization : 'Token-generated-from-login'}
  
- Get All Notes - GET : `/notes` , (`:id`- Note ID) , params : { "page" :'page-no' , "limit": 'limit'} , Headers : {Authorization : 'Token-generated-from-login'}
+ Get All Notes - GET : `/notes` , params : { "page" :'page-no' , "limit": 'limit'} , Headers : {Authorization : 'Token-generated-from-login'}
